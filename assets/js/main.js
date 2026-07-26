@@ -67,28 +67,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }, { passive: true });
   }
 
-  // ── CONTACT FORM ─────────────────────────────────────────
-  const form = document.querySelector('.contact-form');
-  if (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const btn = form.querySelector('button[type="submit"]');
-      const original = btn.textContent;
-      btn.textContent = 'Sending...';
-      btn.disabled = true;
-      setTimeout(() => {
-        btn.textContent = 'Message Sent';
-        btn.style.background = '#145C44';
-        form.reset();
-        setTimeout(() => {
-          btn.textContent = original;
-          btn.disabled = false;
-          btn.style.background = '';
-        }, 3000);
-      }, 1500);
-    });
-  }
-
   // ── YEAR IN FOOTER ───────────────────────────────────────
   document.querySelectorAll('.js-year').forEach(el => {
     el.textContent = new Date().getFullYear();
